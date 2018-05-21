@@ -89,9 +89,12 @@ constraining satisfection problem ou constraining optimization problem
 -- permitir apenas representações, recombinação e mutação que respeitem a restrição
 
 ### Teorema de Holland
+m(H, t+1) >= m(H,t). f(H)/<f> . [1 - (pc . d(H)/(l-1))] . [1 - pm.o(H)]
+
 Analisa o SGA padrao: fitness-proportional parent select, one-point crossover, bitwise mutation, generational survivor selection.
 Exemplo: schema com H=1##0#1#0
 ordem: numero de bits que nao sao don't care -> o(H) = 4
 length: distancia entre o primeiro e ultimo bit que nao são don't care -> d(H) = 8-1 = 7.
 
-Pd(H, x) to denote that probability that the action of an operator x on an instance of a schema H is to destroy it, and Ps(H) to denote the probability that a string containing an instance of schema H is selected.
+para m(H, t+1) > m(H, t), ou seja, o algoritmo convirja para H, precisamos que:  
+f(H)/<f> > [1 - (pc . d(H)/(l-1))] . [1 - pm.o(H)]
